@@ -1,0 +1,16 @@
+<!doctype html>
+<html lang="zh-CN">
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>幻龙 · 作品集</title>
+<meta name="description" content="幻龙的三维作品集：角色、生物资产、渲染镜头与制作过程。">
+<style>
+*{box-sizing:border-box}body{margin:0;background:#101211;color:#eceee8;font-family:Arial,"Microsoft YaHei",sans-serif}header,main,footer{max-width:1320px;margin:auto;padding:28px 6%}header{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #343731}a{color:inherit;text-decoration:none}.brand{font-size:23px;font-weight:700}.small{color:#a2a79e;font-size:12px;letter-spacing:2px}.intro{padding:72px 0 48px}.intro h1{font-size:clamp(46px,7vw,86px);letter-spacing:-3px;margin:16px 0 24px;font-weight:500}.intro p{color:#aeb4aa;line-height:1.9}.accent{color:#c6e58c}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:38px 24px}.card{min-width:0}.card:first-child{grid-column:1/-1}.visual{background:#1c201c;border:1px solid #343a30;aspect-ratio:16/9;overflow:hidden}video{width:100%;height:100%;object-fit:contain;display:block}.meta{display:flex;justify-content:space-between;gap:16px;align-items:center;padding:16px 0}.meta h2{font-size:19px;font-weight:500;margin:0}.tag{color:#a5b28f;font-size:12px}footer{margin-top:64px;border-top:1px solid #343731;color:#8b9385;font-size:13px;padding-top:26px;padding-bottom:40px}button{font:inherit}video:focus-visible,a:focus-visible{outline:2px solid #c6e58c}@media(max-width:650px){.grid{grid-template-columns:1fr;gap:20px}.intro{padding:42px 0 24px}.intro h1{letter-spacing:-1px}.small{font-size:10px;letter-spacing:1px}.meta h2{font-size:17px}}
+</style>
+<header><a class="brand" href="./">幻龙<span class="accent">.</span></a><span class="small">SELECTED WORKS · 2026</span></header>
+<main><section class="intro"><span class="small accent">3D ART PORTFOLIO</span><h1>让想象，成为可见。</h1><p>角色与生物资产 · 渲染展示 · 制作过程<br>幻龙 / 精选作品集</p></section><section class="grid" aria-label="作品视频">
+</section></main><footer>© 2026 幻龙 · 作品集 <span style="float:right">感谢观看</span></footer>
+<script>
+const works=[['showreel','作品合集','精选作品'],['assets','资产演示合集','资产展示'],['lizard-render','蜥蜴 · 渲染镜头','生物资产'],['lizard-process','蜥蜴 · 制作演示','制作过程'],['portrait','头像演示','角色展示'],['toad','Toad 演示','生物展示']];
+document.querySelector('.grid').innerHTML=works.map(([id,title,tag],i)=>`<article class="card"><div class="visual"><video controls playsinline preload="none" poster="posters/${id}.jpg" aria-label="${title}"><source src="media/${id}.mp4" type="video/mp4">浏览器无法播放此视频，请<a href="media/${id}.mp4">下载观看</a>。</video></div><div class="meta"><h2>${title}</h2><span class="tag">0${i+1} / ${tag}</span></div></article>`).join('');
+document.querySelectorAll('video').forEach(v=>v.addEventListener('play',()=>document.querySelectorAll('video').forEach(other=>{if(other!==v)other.pause()})));
+</script></html>
